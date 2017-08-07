@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
+  <test name="Nopackage">
+    <classes>
+      <class name="BasePackage.DriverClass"/>
+    </classes>
+  </test> <!-- Nopackage -->
+  <test name="Nopackage(failed)">
+    <classes>
+      <class name="BasePackage.DriverClass">
+        <methods>
+          <include name="FirstSampleTest"/>
+        </methods>
+      </class> <!-- BasePackage.DriverClass -->
+    </classes>
+  </test> <!-- Nopackage(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
