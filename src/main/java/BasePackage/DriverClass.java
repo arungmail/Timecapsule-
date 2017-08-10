@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -36,9 +38,10 @@ public class DriverClass {
      
 	 //@BeforeTest
  
- @Test
+ 
+        @BeforeSuite 
         
-	    public void FirstSampleTest() throws MalformedURLException, InterruptedException{
+	    public void launnApplication() throws MalformedURLException, InterruptedException{
 	       /* DesiredCapabilities cap=new DesiredCapabilities();
 	        File app= new File("C:\\Users\\nichiuser\\Downloads\\cordova_project-armv7.android.20170208144005.apk");
 	        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "0123456789ABCDEF");
@@ -50,17 +53,21 @@ public class DriverClass {
 	        /*driver =new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);*/
         	DesiredCapabilities cap = new DesiredCapabilities();
         	File app= new File("C:\\Users\\nichiuser\\Downloads\\AR Capsule_com.nichi.artimecapsule.apk");
-    		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "3100195bd3144300");
+    		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "0123456789ABCDEF");
     		cap.setCapability(MobileCapabilityType.APP_PACKAGE, "com.nichi.artimecapsule");
     		cap.setCapability("appActivity","com.nichi.artimecapsule.SplashscreenActivity");
     		driver = new AndroidDriver(new URL(
     				"http://127.0.0.1:4723/wd/hub"), cap);
 	        System.out.println(driver);
 	        driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
-	        driver.findElement(By.id("com.nichi.artimecapsule:id/name")).click();
+	       // driver.findElement(By.id("com.nichi.artimecapsule:id/name")).click();
 	       
-	    Thread.sleep(10000);
-	    
-	    
+	    Thread.sleep(10000);   
 }
+        
+        @AfterSuite
+        
+        public void closeApplication (){
+        	driver.quit();
+        }
 }

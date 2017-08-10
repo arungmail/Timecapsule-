@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">9 methods, 4 failed,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,10 +102,59 @@
                     <div class="method-list-content failed suite-Suite1">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="BasePackage.DriverClass" hash-for-method="FirstSampleTest">FirstSampleTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="checkvalidRegistration">checkvalidRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="nickNamevalidation">nickNamevalidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="verifyExistingEmailIDValidation">verifyExistingEmailIDValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="verifyExistingNickNamevalidation">verifyExistingNickNamevalidation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite1 -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite1" class="hide-methods passed suite-Suite1"> (hide)</a> <!-- hide-methods passed suite-Suite1 -->
+                      <a href="#" panel-name="suite-Suite1" class="show-methods passed suite-Suite1"> (show)</a> <!-- show-methods passed suite-Suite1 -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite1">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="agevalidationError">agevalidationError</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="genderValidation">genderValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="invalidEmailIdvalidationError">invalidEmailIdvalidationError</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="passwordError">passwordError</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="Test.Register" hash-for-method="verifyEmptyEmailIdFiels">verifyEmptyEmailIdFiels</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite1 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -120,46 +169,106 @@
           <div class="suite-Suite1-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">BasePackage.DriverClass</span>
+              <span class="class-name">Test.Register</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="FirstSampleTest">
-                  </a> <!-- FirstSampleTest -->
-                  <span class="method-name">FirstSampleTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 160.12 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
-System info: host: &apos;NIS-PC093&apos;, ip: &apos;192.168.1.93&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=com.nichi.artimecapsule, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=3100195bd3144300, platform=LINUX, appActivity=com.nichi.artimecapsule.SplashscreenActivity, desired={appPackage=com.nichi.artimecapsule, appActivity=com.nichi.artimecapsule.SplashscreenActivity, platformName=Android, deviceName=3100195bd3144300}, platformVersion=5.1.1, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: b8374fd3-3b33-46d7-85b5-604ea5d8e983
-*** Element info: {Using=id, value=com.nichi.artimecapsule:id/name}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:62)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at BasePackage.DriverClass.FirstSampleTest(DriverClass.java:60)
-... Removed 28 stack frames
+                  <a name="checkvalidRegistration">
+                  </a> <!-- checkvalidRegistration -->
+                  <span class="method-name">checkvalidRegistration</span>
+                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;[Please enter email address].&gt; but was:&lt;[An Account activation link has been sent to %@. Please check your Spam folder too].&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at Test.Register.checkvalidRegistration(Register.java:100)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="nickNamevalidation">
+                  </a> <!-- nickNamevalidation -->
+                  <span class="method-name">nickNamevalidation</span>
+                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;...lease enter Nickname[]&gt; but was:&lt;...lease enter Nickname[.]&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at Test.Register.nickNamevalidation(Register.java:135)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyExistingEmailIDValidation">
+                  </a> <!-- verifyExistingEmailIDValidation -->
+                  <span class="method-name">verifyExistingEmailIDValidation</span>
+                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;...dress already exists[.]&gt; but was:&lt;...dress already exists[]&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at Test.Register.verifyExistingEmailIDValidation(Register.java:174)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyExistingNickNamevalidation">
+                  </a> <!-- verifyExistingNickNamevalidation -->
+                  <span class="method-name">verifyExistingNickNamevalidation</span>
+                  <div class="stack-trace">junit.framework.ComparisonFailure: expected:&lt;[nickname already exist. Please try with different Nickname.]&gt; but was:&lt;[This email address already exists]&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at Test.Register.verifyExistingNickNamevalidation(Register.java:154)
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite1-class-failed -->
+          <div class="suite-Suite1-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Test.Register</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="agevalidationError">
+                  </a> <!-- agevalidationError -->
+                  <span class="method-name">agevalidationError</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="genderValidation">
+                  </a> <!-- genderValidation -->
+                  <span class="method-name">genderValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidEmailIdvalidationError">
+                  </a> <!-- invalidEmailIdvalidationError -->
+                  <span class="method-name">invalidEmailIdvalidationError</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="passwordError">
+                  </a> <!-- passwordError -->
+                  <span class="method-name">passwordError</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmptyEmailIdFiels">
+                  </a> <!-- verifyEmptyEmailIdFiels -->
+                  <span class="method-name">verifyEmptyEmailIdFiels</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite1-class-passed -->
         </div> <!-- panel Suite1 -->
         <div panel-name="test-xml-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -173,17 +282,9 @@ Session ID: b8374fd3-3b33-46d7-85b5-604ea5d8e983
   &lt;test name=&quot;Nopackage&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;BasePackage.DriverClass&quot;/&gt;
+      &lt;class name=&quot;Test.Register&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Nopackage --&gt;
-  &lt;test name=&quot;Nopackage(failed)&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;BasePackage.DriverClass&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;FirstSampleTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- BasePackage.DriverClass --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Nopackage(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -195,10 +296,7 @@ Session ID: b8374fd3-3b33-46d7-85b5-604ea5d8e983
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Nopackage (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Nopackage(failed) (1 class)</span>
+                <span class="test-name">Nopackage (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -224,16 +322,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'FirstSampleTest')
-data.setCell(0, 2, 'BasePackage.DriverClass')
-data.setCell(0, 3, 167814);
+data.setCell(0, 1, 'nickNamevalidation')
+data.setCell(0, 2, 'Test.Register')
+data.setCell(0, 3, 84023);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyExistingEmailIDValidation')
+data.setCell(1, 2, 'Test.Register')
+data.setCell(1, 3, 65957);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'genderValidation')
+data.setCell(2, 2, 'Test.Register')
+data.setCell(2, 3, 44195);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'checkvalidRegistration')
+data.setCell(3, 2, 'Test.Register')
+data.setCell(3, 3, 40044);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyExistingNickNamevalidation')
+data.setCell(4, 2, 'Test.Register')
+data.setCell(4, 3, 34914);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyEmptyEmailIdFiels')
+data.setCell(5, 2, 'Test.Register')
+data.setCell(5, 3, 27230);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'invalidEmailIdvalidationError')
+data.setCell(6, 2, 'Test.Register')
+data.setCell(6, 3, 24332);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'agevalidationError')
+data.setCell(7, 2, 'Test.Register')
+data.setCell(7, 3, 12528);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'passwordError')
+data.setCell(8, 2, 'Test.Register')
+data.setCell(8, 3, 10153);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -248,9 +378,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Test.Register</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">launnApplication</span>
+                <br/>
+                <span class="ignored-method-name">closeApplication</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite1" class="panel">
@@ -260,12 +399,64 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">BasePackage.DriverClass</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">launnApplication</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Test.Register</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">FirstSampleTest</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-name">checkvalidRegistration</span>
+                <span class="method-start">21321 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">nickNamevalidation</span>
+                <span class="method-start">61371 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyExistingNickNamevalidation</span>
+                <span class="method-start">145397 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyExistingEmailIDValidation</span>
+                <span class="method-start">180313 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyEmptyEmailIdFiels</span>
+                <span class="method-start">246273 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">invalidEmailIdvalidationError</span>
+                <span class="method-start">273507 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">genderValidation</span>
+                <span class="method-start">297842 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">agevalidationError</span>
+                <span class="method-start">342040 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">passwordError</span>
+                <span class="method-start">354573 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">BasePackage.DriverClass</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">closeApplication</span>
+                <span class="method-start">364801 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
