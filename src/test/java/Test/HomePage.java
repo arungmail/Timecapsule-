@@ -3,6 +3,7 @@ package Test;
 import org.openqa.selenium.By;
 
 import BasePackage.DriverClass;
+import junit.framework.Assert;
 
 public class HomePage extends DriverClass {
 	
@@ -50,10 +51,231 @@ public class HomePage extends DriverClass {
 	
 	
 	
+	public void clickOnNextButton (){
+		driver.findElement(NextButton).click();
+	}
 	
+	public void createTCCapsule () throws InterruptedException{
+		driver.findElement(CreateAdd).click();
+		
+		driver.findElement(TCButton).click();
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		driver.findElement(SpainVillageNDR).click();
+		clickOnNextButton();
+		driver.findElement(SpainVillageNDR);
+		driver.findElement(By.name("13")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();	
+	}
 	
+	public void checkExcavatioLocationIncreatedCapsule (){
+		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
+		String expectedLocation = "Excavation Location: Spain Village NDR";
+		Assert.assertEquals(expectedLocation, excavaionLocation);
+	}
 	
+	public void verifyExcavationDate (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(TC) Excavation Date 13-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
 	
+	public void editExcavationLocationandDateandPlace () throws InterruptedException{
+		driver.findElement(CapauleImage).click();
+		driver.findElement(CapsuleEdit);
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(HarukasNDR);
+		driver.findElement(By.name("14")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();	
+		
+	}
+	
+	public void checkExcavatioLocationIncreatedCapsuleafterEdit (){
+		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
+		String expectedLocation = "Excavation Location: Harukas NDR";
+		Assert.assertEquals(expectedLocation, excavaionLocation);
+	}
+	
+	public void verifyExcavationDateafterEdit (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(TC) Excavation Date 14-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
+	
+	public void editToPCCapsule () throws InterruptedException{
+		driver.findElement(CapauleImage).click();
+		driver.findElement(CapsuleEdit);
+		driver.findElement(PCButton).click();
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		/*driver.findElement(HarukasNDR).click();
+		clickOnNextButton();*/
+		driver.findElement(HarukasNDR);
+		driver.findElement(By.name("14")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();
+	}
+	
+	public void verifyExcavationDateInPC (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(PC) Excavation Date 14-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
+	
+	public void verifyDeleteCApsuleValidatioMessage (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(capsuleDelete).click();
+		Assert.assertEquals("Are you sure you want to delete the Capsule?", reg.getValidationMessage());
+	}
+	
+	public void verifyCapsuleExistByClickOnNo(){
+		driver.findElement(NoDelete).click();
+		boolean capsuleImeage = driver.findElement(CapauleImage).isDisplayed();
+		Assert.assertEquals(true, capsuleImeage);
+	}
+	
+	public void verfyCaosuleNotExistByClickOnYes (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(capsuleDelete).click();
+		driver.findElement(YesDelete).click();
+		Assert.assertEquals(false, driver.findElement(CapauleImage).isDisplayed());
+	}
+	
+	public void createPCCapaule () throws InterruptedException{
+        driver.findElement(CreateAdd).click();
+		
+		driver.findElement(PCButton).click();
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		/*driver.findElement(SpainVillageNDR).click();
+		clickOnNextButton();*/
+		driver.findElement(SpainVillageNDR);
+		driver.findElement(By.name("13")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();	
+	}
 
+	public void checkExcavatioLocationIncreatedPCCapsule (){
+		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
+		String expectedLocation = "Excavation Location: Spain Village NDR";
+		Assert.assertEquals(expectedLocation, excavaionLocation);
+	}
+	
+	public void verifyExcavationDateInPCCApaule (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(PC) Excavation Date 13-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
+	
+	public void editExcavationLocationandDateandPlacePCCapsule () throws InterruptedException{
+		driver.findElement(CapauleImage).click();
+		driver.findElement(CapsuleEdit);
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		/*driver.findElement(HarukasNDR).click();
+		clickOnNextButton();*/
+		driver.findElement(HarukasNDR);
+		driver.findElement(By.name("14")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();	
+		
+	}
+	public void checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule (){
+		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
+		String expectedLocation = "Excavation Location: Harukas NDR";
+		Assert.assertEquals(expectedLocation, excavaionLocation);
+	}
+	
+	public void verifyExcavationDateafterEditPCCApaule (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(TC) Excavation Date 14-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
+	
+	public void editPCCApauleToTC () throws InterruptedException{
+		driver.findElement(CapauleImage).click();
+		driver.findElement(CapsuleEdit);
+		driver.findElement(PCButton).click();
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(HarukasNDR);
+		driver.findElement(By.name("14")).click();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.findElement(CompleteButtton).click();
+	}
+	
+	public void verifyExcavationDateInTC (){
+		String excavationDate = driver.findElement(ExcavtionDate).getText();
+		String expectedDate = "(PC) Excavation Date 14-Aug-2017";
+		Assert.assertEquals(expectedDate, excavationDate);
+	}
+	
+	public void verifyDeleteCApsuleValidatioMessageTC (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(capsuleDelete).click();
+		Assert.assertEquals("Are you sure you want to delete the Capsule?", reg.getValidationMessage());
+	}
+	
+	public void verifyCapsuleExistByClickOnNo1(){
+		driver.findElement(NoDelete).click();
+		boolean capsuleImeage = driver.findElement(CapauleImage).isDisplayed();
+		Assert.assertEquals(true, capsuleImeage);
+	}
+	
+	public void verfyCaosuleNotExistByClickOnYes1 (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(capsuleDelete).click();
+		driver.findElement(YesDelete).click();
+		Assert.assertEquals(false, driver.findElement(CapauleImage).isDisplayed());
+	}
 
 }

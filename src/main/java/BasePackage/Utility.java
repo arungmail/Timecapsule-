@@ -1,6 +1,8 @@
 package BasePackage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MultiTouchAction;
@@ -12,7 +14,7 @@ public class Utility extends DriverClass{
 	
 	public Dimension size;
 
-	public void multTouchAction ()  throws InterruptedException {{
+	public void multTouchAction ()  throws InterruptedException {
 	
 		  
 		  size = driver.manage().window().getSize();
@@ -62,6 +64,80 @@ public class Utility extends DriverClass{
 		  perform() action will perform steps given In MultiTouchAction chain.
 		  Now you can run above test script In your android mobile device using appium and testng. It will launch MultiTouch Tester App In your android mobile device and then perform multitouch action.*/
 		 }
-	}
+	
+	public void dragFileAndDrop (){
+		driver.findElementByName("Basic usage playground").click();
 
+		  //Locate 3rd element(Chick Corea) from list to drag.
+		  WebElement ele1 = (WebElement) driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(2);
+		  //Locate 6th element to drop dragged element.
+		  WebElement ele2 = (WebElement) driver.findElementsById("com.mobeta.android.demodslv:id/drag_handle").get(5);
+
+		  //Perform drag and drop operation using TouchAction class.
+		  //Created object of TouchAction class.
+		  TouchAction action = new TouchAction((MobileDriver) driver);
+		  
+		  System.out.println("It Is dragging element.");
+		  //It will hold tap on 3rd element and move to 6th position and then release tap.
+		  action.longPress(ele1).moveTo(ele2).release().perform();  
+		  System.out.println("Element has been droped at destination successfully.");
+	}
+	
+		public void horiondalSwipe () throws InterruptedException{
+			size = driver.manage().window().getSize();
+			  System.out.println(size);
+			  
+			  //Find swipe start and end point from screen's with and height.
+			  //Find startx point which is at right side of screen.
+			  int startx = (int) (size.width * 0.70);
+			  //Find endx point which is at left side of screen.
+			  int endx = (int) (size.width * 0.30);
+			  //Find vertical point where you wants to swipe. It is in middle of screen height.
+			  int starty = size.height / 2;
+			  System.out.println("startx = " + startx + " ,endx = " + endx + " , starty = " + starty);
+
+			  //Swipe from Right to Left.
+			  driver.swipe(startx, starty, endx, starty, 3000);
+			  Thread.sleep(2000);
+
+			  //Swipe from Left to Right.
+			  driver.swipe(endx, starty, startx, starty, 3000);
+			  Thread.sleep(2000);
+			 }
+
+		public void verticalSwipe () throws InterruptedException{
+			size = driver.manage().window().getSize();
+			  System.out.println(size);
+			   
+			  //Find swipe start and end point from screen's with and height.
+			  //Find starty point which is at bottom side of screen.
+			  int starty = (int) (size.height * 0.80);
+			  //Find endy point which is at top side of screen.
+			  int endy = (int) (size.height * 0.20);
+			  //Find horizontal point where you wants to swipe. It is in middle of screen width.
+			  int startx = size.width / 2;
+			  System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx);
+
+			  //Swipe from Bottom to Top.
+			  driver.swipe(startx, starty, startx, endy, 3000);
+			  Thread.sleep(2000);
+			  //Swipe from Top to Bottom.
+			  driver.swipe(startx, endy, startx, starty, 3000);
+			  Thread.sleep(2000);
+		}
+
+		public void scrolDwonpageAndClick(){
+			//Scroll till element which contains "Views" text If It Is not visible on screen.
+			  driver.scrollTo("Views");
+			  // Click on Views/.
+			  driver.findElement(By.name("Views")).click();
+			  System.out.println("Scrolling has been started to find text -> Tabs.");
+			  // Scroll till element which contains Tabs text.
+			  driver.scrollTo("Tabs");
+			  System.out.println("Tabs text has been found and now clicking on It.");
+			  // Click on Tabs.
+			  driver.findElement(By.name("Tabs")).click();
+		}
+		
+		
 }
