@@ -1,6 +1,7 @@
 package Test;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
 import junit.framework.Assert;
@@ -55,6 +56,7 @@ public class HomePage extends DriverClass {
 		driver.findElement(NextButton).click();
 	}
 	
+	@Test(priority=1)
 	public void createTCCapsule () throws InterruptedException{
 		driver.findElement(CreateAdd).click();
 		
@@ -76,18 +78,20 @@ public class HomePage extends DriverClass {
 		driver.findElement(CompleteButtton).click();	
 	}
 	
+	@Test(priority=2)
 	public void checkExcavatioLocationIncreatedCapsule (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
 		String expectedLocation = "Excavation Location: Spain Village NDR";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
-	
+	@Test(priority=3)
 	public void verifyExcavationDate (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(TC) Excavation Date 13-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=4)
 	public void editExcavationLocationandDateandPlace () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
 		driver.findElement(CapsuleEdit);
@@ -108,19 +112,21 @@ public class HomePage extends DriverClass {
 		driver.findElement(CompleteButtton).click();	
 		
 	}
-	
+	@Test(priority=5)
 	public void checkExcavatioLocationIncreatedCapsuleafterEdit (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
 		String expectedLocation = "Excavation Location: Harukas NDR";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
 	
+	@Test(priority=6)
 	public void verifyExcavationDateafterEdit (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(TC) Excavation Date 14-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=7)
 	public void editToPCCapsule () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
 		driver.findElement(CapsuleEdit);
@@ -142,24 +148,28 @@ public class HomePage extends DriverClass {
 		driver.findElement(CompleteButtton).click();
 	}
 	
+	@Test(priority=8)
 	public void verifyExcavationDateInPC (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(PC) Excavation Date 14-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=9)
 	public void verifyDeleteCApsuleValidatioMessage (){
 		driver.findElement(CapauleImage).click();
 		driver.findElement(capsuleDelete).click();
 		Assert.assertEquals("Are you sure you want to delete the Capsule?", reg.getValidationMessage());
 	}
 	
+	@Test(priority=10)
 	public void verifyCapsuleExistByClickOnNo(){
 		driver.findElement(NoDelete).click();
 		boolean capsuleImeage = driver.findElement(CapauleImage).isDisplayed();
 		Assert.assertEquals(true, capsuleImeage);
 	}
 	
+	@Test(priority=11)
 	public void verfyCaosuleNotExistByClickOnYes (){
 		driver.findElement(CapauleImage).click();
 		driver.findElement(capsuleDelete).click();
@@ -167,6 +177,7 @@ public class HomePage extends DriverClass {
 		Assert.assertEquals(false, driver.findElement(CapauleImage).isDisplayed());
 	}
 	
+	@Test(priority=12)
 	public void createPCCapaule () throws InterruptedException{
         driver.findElement(CreateAdd).click();
 		
@@ -187,19 +198,22 @@ public class HomePage extends DriverClass {
 		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
 		driver.findElement(CompleteButtton).click();	
 	}
-
+	
+	@Test(priority=13)
 	public void checkExcavatioLocationIncreatedPCCapsule (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
 		String expectedLocation = "Excavation Location: Spain Village NDR";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
 	
+	@Test(priority=14)
 	public void verifyExcavationDateInPCCApaule (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(PC) Excavation Date 13-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=15)
 	public void editExcavationLocationandDateandPlacePCCapsule () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
 		driver.findElement(CapsuleEdit);
@@ -220,18 +234,21 @@ public class HomePage extends DriverClass {
 		driver.findElement(CompleteButtton).click();	
 		
 	}
+	@Test(priority=16)
 	public void checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
 		String expectedLocation = "Excavation Location: Harukas NDR";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
 	
+	@Test(priority=17)
 	public void verifyExcavationDateafterEditPCCApaule (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(TC) Excavation Date 14-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=18)
 	public void editPCCApauleToTC () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
 		driver.findElement(CapsuleEdit);
@@ -253,24 +270,28 @@ public class HomePage extends DriverClass {
 		driver.findElement(CompleteButtton).click();
 	}
 	
+	@Test(priority=19)
 	public void verifyExcavationDateInTC (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(PC) Excavation Date 14-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
+	@Test(priority=20)
 	public void verifyDeleteCApsuleValidatioMessageTC (){
 		driver.findElement(CapauleImage).click();
 		driver.findElement(capsuleDelete).click();
 		Assert.assertEquals("Are you sure you want to delete the Capsule?", reg.getValidationMessage());
 	}
 	
+	@Test(priority=21)
 	public void verifyCapsuleExistByClickOnNo1(){
 		driver.findElement(NoDelete).click();
 		boolean capsuleImeage = driver.findElement(CapauleImage).isDisplayed();
 		Assert.assertEquals(true, capsuleImeage);
 	}
 	
+	@Test(priority=22)
 	public void verfyCaosuleNotExistByClickOnYes1 (){
 		driver.findElement(CapauleImage).click();
 		driver.findElement(capsuleDelete).click();
