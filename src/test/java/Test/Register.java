@@ -220,10 +220,37 @@ public class Register extends DriverClass{
 		 driver.findElement(Age).click();
 		 driver.findElement(AgeSelection).click();
 		 driver.findElement(By.id("android:id/button1")).click();
-		 
 		 driver.findElement(SignUpButton).click();
 		 String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		 Assert.assertEquals("Please enter password.", succeesmessage);
 		 driver.findElement(OK).click();
 	 }
+	
+	public void confirmpasswordValidation (){
+		driver.findElement(Password).clear();
+		driver.findElement(Password).sendKeys("12345678");
+		driver.findElement(SignUpButton).click();
+		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
+		Assert.assertEquals("Please re confirm password.", succeesmessage);
+		 driver.findElement(OK).click();
+	}
+	
+	public void matchingpasswordvalidatioError (){
+		driver.findElement(ConfirmPassword).sendKeys("12235565");
+		driver.findElement(SignUpButton).click();
+		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
+		Assert.assertEquals("These passwords don't match. Try again?", succeesmessage);
+		 driver.findElement(OK).click();
+	}
+	
+	public void lesThanFourCharactresPasssword(){
+		driver.findElement(Password).clear();
+		driver.findElement(Password).sendKeys("dfhd");
+		driver.findElement(ConfirmPassword).clear();
+		driver.findElement(ConfirmPassword).sendKeys("sdg");
+		driver.findElement(SignUpButton).click();
+		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
+		Assert.assertEquals("Password should be of minimum 8 and maximum 32 characters.", succeesmessage);
+		driver.findElement(OK).click();
+	}
 }
