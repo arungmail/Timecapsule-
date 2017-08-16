@@ -298,5 +298,55 @@ public class HomePage extends DriverClass {
 		driver.findElement(YesDelete).click();
 		Assert.assertEquals(false, driver.findElement(CapauleImage).isDisplayed());
 	}
+	
+	@Test(priority=23)
+	public void verifyCapsuleTypevalidationError (){
+		driver.findElement(CreateAdd).click();
+		clickOnNextButton();
+		Assert.assertEquals(reg.getValidationMessage(), "Please select capsule type.");
+		reg.clickOnOKButton();
+	}
+	
+	@Test(priority=24)
+	public void verifySelectIconValidationErrorMessage (){
+		driver.findElement(TCButton).click();
+		clickOnNextButton();
+		reg.clickOnOKButton();
+		clickOnNextButton();
+		Assert.assertEquals(reg.getValidationMessage(), "Please select icon.");	
+		reg.clickOnOKButton();
+	}
+	@Test(priority=25)
+	public void verifyFillLocationValidationError (){
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		clickOnNextButton();
+		Assert.assertEquals(reg.getValidationMessage(), "Please select filling location.");
+		reg.clickOnOKButton();
+	}
+	
+	@Test(priority=26)
+	public void verifyExcavationLocationvalidationError () throws InterruptedException{
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		Thread.sleep(500);
+		clickOnNextButton();
+		Assert.assertEquals(reg.getValidationMessage(), "Please select excavation location.");
+		reg.clickOnOKButton();
+	}
+	
+	
+	@Test(priority=27)
+	public void verifyUploadImagevalidationError () throws InterruptedException{
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(By.name("13")).click();
+		clickOnNextButton();
+		Thread.sleep(500);
+		clickOnNextButton();
+		Assert.assertEquals(reg.getValidationMessage(),"Please select the Greeting card." );	
+	}
+
+	
 
 }

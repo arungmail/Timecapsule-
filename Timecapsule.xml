@@ -4,7 +4,7 @@
   <test name="Nopackage" >
     <classes>
        <class name="BasePackage.DriverClass" />
-       <class name ="Test.Register"/>
+       <class name ="Test.HomePage"/>
      
        
       
