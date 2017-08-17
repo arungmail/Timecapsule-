@@ -4,25 +4,6 @@
   <test name="Nopackage">
     <classes>
       <class name="BasePackage.DriverClass"/>
-      <class name="Test.Register"/>
     </classes>
   </test> <!-- Nopackage -->
-  <test name="Nopackage(failed)">
-    <classes>
-      <class name="BasePackage.DriverClass">
-        <methods>
-          <include name="launnApplication"/>
-          <include name="closeApplication"/>
-        </methods>
-      </class> <!-- BasePackage.DriverClass -->
-      <class name="Test.Register">
-        <methods>
-          <include name="checkvalidRegistration"/>
-          <include name="verifyExistingEmailIDValidation"/>
-          <include name="nickNamevalidation"/>
-          <include name="verifyExistingNickNamevalidation"/>
-        </methods>
-      </class> <!-- Test.Register -->
-    </classes>
-  </test> <!-- Nopackage(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

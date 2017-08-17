@@ -244,7 +244,7 @@ public class Register extends DriverClass{
 		 clickOnOKButton();
 	 }
 	
-<<<<<<< HEAD
+
 	public void confirmpasswordValidation (){
 		driver.findElement(Password).clear();
 		driver.findElement(Password).sendKeys("12345678");
@@ -271,9 +271,9 @@ public class Register extends DriverClass{
 		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		Assert.assertEquals("Password should be of minimum 8 and maximum 32 characters.", succeesmessage);
 		driver.findElement(OK).click();
-=======
+	}
 	public void checkConfirmPasswordValidationError (){
 		
->>>>>>> 168603f4aa39b87286b98dfbed236b8dd5b412d5
+
 	}
 }
