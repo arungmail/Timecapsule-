@@ -16,7 +16,7 @@ public class HomePage extends DriverClass {
 	public By CreateAdd = By.id("com.nichi.artimecapsule:id/capsule_add");
 	public By ReceiveButton = By.id("com.nichi.artimecapsule:id/authenticate_btn");
 	public By TCButton = By.id("com.nichi.artimecapsule:id/fill_here_btn");
-	public By PCButton = By.id("com.nichi.artimecapsule:id/fill_here_btn");
+	public By PCButton = By.id("com.nichi.artimecapsule:id/fill_advance_btn");
 	public By NextButton = By.id("com.nichi.artimecapsule:id/next_btn");
 	public By SelectCapsuolepageTitle  = By.id("com.nichi.artimecapsule:id/fill_selected");
 	public By OccassionList = By.id("com.nichi.artimecapsule:id/occassion_list");
@@ -37,9 +37,9 @@ public class HomePage extends DriverClass {
 	public By ExcavtionDate   = By.id("com.nichi.artimecapsule:id/date");
 	public By ExcavtionLocation = By.id("com.nichi.artimecapsule:id/share_txt");
 	public By CapauleImage    = By.id("com.nichi.artimecapsule:id/capsule_img");
-	public By CapsuleEdit   = By.id("com.nichi.artimecapsule:id/capsule_edit");
-	public By capsuleDelete   = By.id("com.nichi.artimecapsule:id/capsule_delete");
-	public By FillButton      = By.id("com.nichi.artimecapsule:id/fill_btn");
+	public By CapsuleEdit   = By.name("Edit");
+	public By capsuleDelete   = By.name("Delete");
+	public By FillButton      = By.name("Fill");
 	public By GrooupAuthSend  = By.id("com.nichi.artimecapsule:id/icon_scan");
 	public By GroupAuthQRCode     = By.id("com.nichi.artimecapsule:id/icon_display");  
 	public By GroupNAmeEnter           = By.xpath("//android.widget.EditText[@index='0']");
@@ -67,7 +67,8 @@ public class HomePage extends DriverClass {
 		driver.findElement(SpainVillageNDR).click();
 		clickOnNextButton();
 		driver.findElement(SpainVillageNDR);
-		driver.findElement(By.name("13")).click();
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -87,21 +88,22 @@ public class HomePage extends DriverClass {
 	@Test(priority=3)
 	public void verifyExcavationDate (){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
-		String expectedDate = "(TC) Excavation Date 13-Aug-2017";
+		String expectedDate = "(TC) Excavation Date: 23-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
 	}
 	
 	@Test(priority=4)
 	public void editExcavationLocationandDateandPlace () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
-		driver.findElement(CapsuleEdit);
+		driver.findElement(CapsuleEdit).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
 		driver.findElement(HarukasNDR).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR);
-		driver.findElement(By.name("14")).click();
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -129,15 +131,16 @@ public class HomePage extends DriverClass {
 	@Test(priority=7)
 	public void editToPCCapsule () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
-		driver.findElement(CapsuleEdit);
+		driver.findElement(CapsuleEdit).click();
 		driver.findElement(PCButton).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
 		/*driver.findElement(HarukasNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(HarukasNDR);
-		driver.findElement(By.name("14")).click();
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -187,8 +190,9 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		/*driver.findElement(SpainVillageNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(SpainVillageNDR);
-		driver.findElement(By.name("13")).click();
+		driver.findElement(SpainVillageNDR).click();
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -216,14 +220,15 @@ public class HomePage extends DriverClass {
 	@Test(priority=15)
 	public void editExcavationLocationandDateandPlacePCCapsule () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
-		driver.findElement(CapsuleEdit);
+		driver.findElement(CapsuleEdit).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
 		/*driver.findElement(HarukasNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(HarukasNDR);
-		driver.findElement(By.name("14")).click();
+		driver.findElement(HarukasNDR).click();
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -251,15 +256,17 @@ public class HomePage extends DriverClass {
 	@Test(priority=18)
 	public void editPCCApauleToTC () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
-		driver.findElement(CapsuleEdit);
+		driver.findElement(CapsuleEdit).click();
 		driver.findElement(PCButton).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
 		driver.findElement(HarukasNDR).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR);
-		driver.findElement(By.name("14")).click();
+		driver.findElement(HarukasNDR).click();
+		
+		clickOnNextButton();
+		driver.findElement(By.name("23")).click();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();

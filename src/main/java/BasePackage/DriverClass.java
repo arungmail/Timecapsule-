@@ -59,7 +59,7 @@ public class DriverClass {
     		driver = new AndroidDriver(new URL(
     				"http://127.0.0.1:4723/wd/hub"), cap);
 	        System.out.println(driver);
-	        driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	       // driver.findElement(By.id("com.nichi.artimecapsule:id/name")).click();
 	       
 	    Thread.sleep(10000);   
