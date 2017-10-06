@@ -23,10 +23,10 @@ public class HomePage extends DriverClass {
 	public By Occasion = By.id("com.nichi.artimecapsule:id/layout");
 	public By AllFillLocationsTable  = By.id("com.nichi.artimecapsule:id/fill_places_layout");
 	public By EachLocations = By.id("com.nichi.artimecapsule:id/layout");
-	public By SpainVillageNichiIN = By.xpath("//android.widget.RelativeLayout[@index='0']");
-	public By SpainVillageNDR = By.xpath("//android.widget.RelativeLayout[@index='1']");
-	public By HarukasNichi  = By.xpath("//android.widget.RelativeLayout[@index='2']");
-	public By HarukasNDR = By.xpath("//android.widget.RelativeLayout[@index='3']");
+	//public By SpainVillageNichiIN = By.xpath("//android.widget.RelativeLayout[@index='0']");
+	public By SpainVillage = By.xpath("//android.widget.ImageView[@index='1']");
+	public By Harukas  = By.xpath("//android.widget.ImageView[@index='0']");
+	//public By HarukasNDR = By.xpath("//android.widget.RelativeLayout[@index='3']");
 	public By CompleteButtton = By.id("com.nichi.artimecapsule:id/lock_img");
 	public By AddMessage = By.id("com.nichi.artimecapsule:id/message");
 	public By CameraButton = By.id("com.nichi.artimecapsule:id/pick_img");
@@ -55,20 +55,22 @@ public class HomePage extends DriverClass {
 	public void clickOnNextButton (){
 		driver.findElement(NextButton).click();
 	}
+	public void clickOnDate (){
+		driver.findElement(By.name("23")).click();
+	}
 	
 	@Test(priority=1)
 	public void createTCCapsule () throws InterruptedException{
 		driver.findElement(CreateAdd).click();
-		
 		driver.findElement(TCButton).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
-		driver.findElement(SpainVillageNDR).click();
+		driver.findElement(SpainVillage).click();
 		clickOnNextButton();
-		driver.findElement(SpainVillageNDR);
+		driver.findElement(SpainVillage).click();
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -76,17 +78,18 @@ public class HomePage extends DriverClass {
 		driver.findElement(ShutterButtonOnCamera).click();
 		driver.findElement(CameraDoneButton).click();
 		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.navigate().back();
 		driver.findElement(CompleteButtton).click();	
 	}
 	
 	@Test(priority=2)
 	public void checkExcavatioLocationIncreatedCapsule (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
-		String expectedLocation = "Excavation Location: Spain Village NDR";
+		String expectedLocation = "Excavation Location: Spain Village";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
 	@Test(priority=3)
-	public void verifyExcavationDate (){
+	public void verifyExcavationDate(){
 		String excavationDate = driver.findElement(ExcavtionDate).getText();
 		String expectedDate = "(TC) Excavation Date: 23-Aug-2017";
 		Assert.assertEquals(expectedDate, excavationDate);
@@ -99,11 +102,11 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -111,9 +114,11 @@ public class HomePage extends DriverClass {
 		driver.findElement(ShutterButtonOnCamera).click();
 		driver.findElement(CameraDoneButton).click();
 		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.navigate().back();
 		driver.findElement(CompleteButtton).click();	
 		
 	}
+	
 	@Test(priority=5)
 	public void checkExcavatioLocationIncreatedCapsuleafterEdit (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
@@ -138,9 +143,9 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		/*driver.findElement(HarukasNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -148,6 +153,7 @@ public class HomePage extends DriverClass {
 		driver.findElement(ShutterButtonOnCamera).click();
 		driver.findElement(CameraDoneButton).click();
 		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.navigate().back();
 		driver.findElement(CompleteButtton).click();
 	}
 	
@@ -173,26 +179,26 @@ public class HomePage extends DriverClass {
 	}
 	
 	@Test(priority=11)
-	public void verfyCaosuleNotExistByClickOnYes (){
+	public void verfyCaosuleNotExistByClickOnYes () throws InterruptedException{
 		driver.findElement(CapauleImage).click();
 		driver.findElement(capsuleDelete).click();
 		driver.findElement(YesDelete).click();
+		Thread.sleep(500);
 		Assert.assertEquals(false, driver.findElement(CapauleImage).isDisplayed());
 	}
 	
 	@Test(priority=12)
 	public void createPCCapaule () throws InterruptedException{
         driver.findElement(CreateAdd).click();
-		
 		driver.findElement(PCButton).click();
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
 		/*driver.findElement(SpainVillageNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(SpainVillageNDR).click();
+		driver.findElement(SpainVillage).click();
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -200,13 +206,14 @@ public class HomePage extends DriverClass {
 		driver.findElement(ShutterButtonOnCamera).click();
 		driver.findElement(CameraDoneButton).click();
 		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.navigate().back();
 		driver.findElement(CompleteButtton).click();	
 	}
 	
 	@Test(priority=13)
 	public void checkExcavatioLocationIncreatedPCCapsule (){
 		String excavaionLocation = driver.findElement(ExcavtionLocation).getText();
-		String expectedLocation = "Excavation Location: Spain Village NDR";
+		String expectedLocation = "Excavation Location: Spain Village";
 		Assert.assertEquals(expectedLocation, excavaionLocation);
 	}
 	
@@ -226,9 +233,9 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		/*driver.findElement(HarukasNDR).click();
 		clickOnNextButton();*/
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -261,12 +268,12 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		driver.findElement(Occasion).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		clickOnNextButton();
-		driver.findElement(HarukasNDR).click();
+		driver.findElement(Harukas).click();
 		
 		clickOnNextButton();
-		driver.findElement(By.name("23")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		driver.findElement(CameraButton).click();
 		driver.findElement(TakePhoto).click();
@@ -318,7 +325,7 @@ public class HomePage extends DriverClass {
 	public void verifySelectIconValidationErrorMessage (){
 		driver.findElement(TCButton).click();
 		clickOnNextButton();
-		reg.clickOnOKButton();
+		//reg.clickOnOKButton();
 		clickOnNextButton();
 		Assert.assertEquals(reg.getValidationMessage(), "Please select icon.");	
 		reg.clickOnOKButton();
@@ -347,7 +354,7 @@ public class HomePage extends DriverClass {
 	public void verifyUploadImagevalidationError () throws InterruptedException{
 		driver.findElement(HarukasNDR).click();
 		clickOnNextButton();
-		driver.findElement(By.name("13")).click();
+		clickOnDate ();
 		clickOnNextButton();
 		Thread.sleep(500);
 		clickOnNextButton();

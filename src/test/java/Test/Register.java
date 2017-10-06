@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import junit.framework.Assert;
@@ -23,7 +24,7 @@ public class Register extends DriverClass{
 	public By SignUpButton = By.id("com.nichi.artimecapsule:id/submit_btn");
 	public By AgeSelection = By.name("21 - 30");
 	public By Sucessmessage = By.id("android:id/message");
-	public By OK = By.name("OK");
+	public By OK = By.id("android:id/button1");
 	
 	
 	public void clickOnOKButton (){
@@ -78,7 +79,8 @@ public class Register extends DriverClass{
 	 @AndroidFindBy (id = "android:id/message")
 	 public MobileElement SigNUpSucessMessage ;
 	 */
-	 
+	 String email = "abc@mailinator.com";
+	 String str = "An Account activation link has been sent to %s . Please check your Spam folder too.";
 	 
 	 
 	 
@@ -89,23 +91,28 @@ public class Register extends DriverClass{
 	@Test(priority=1)
 	 
 	 public void checkvalidRegistration  () throws InterruptedException{
-		
+		driver.navigate().back();
 		driver.findElement(SigUp).click();
 		driver.findElement(NickName).sendKeys("jsdgsdgdh");
-		driver.findElement(Email).sendKeys("jghghgh@gmail.com");
+		driver.navigate().back();
+		driver.findElement(Email).sendKeys(email);
+		driver.navigate().back();
 		driver.findElement(Age).click();
 		driver.findElement(AgeSelection).click();
-		driver.findElement(By.id("android:id/button1")).click();
+		clickOnOKButton();
 		driver.findElement(Gender).click();
 		driver.findElement(Male).click();
-		driver.findElement(GenderOk).click();
+		clickOnOKButton();
 		driver.findElement(Password).sendKeys("12345678");
+		driver.navigate().back();
 		driver.findElement(ConfirmPassword).sendKeys("12345678");
+		driver.navigate().back();
 		driver.findElement(SignUpButton).click();
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		 System.out.println(getValidationMessage());
-		 //Assert.assertEquals(succeesmessage, "An Account activation link has been sent to %@. Please check your Spam folder too."); 
-		Assert.assertEquals("Please enter email address.",getValidationMessage());
+		 String str1 = String.format(str, email);
+		Assert.assertEquals(getValidationMessage(),str1); 
+		//Assert.assertEquals("Please enter email address.",getValidationMessage());
 		clickOnOKButton();
 		 /*SignUp.click();
 		 NickName.click();
@@ -125,30 +132,44 @@ public class Register extends DriverClass{
 	 
 	
 	@Test(priority=2)
+	
 	 public void nickNamevalidation (){
 
 			driver.findElement(SigUp).click();
 			//driver.findElement(NickName).sendKeys("Arun");
+			driver.findElement(Email).clear();
 			driver.findElement(Email).sendKeys("ghghg@gmail.com");
+			driver.navigate().back();
 			driver.findElement(Age).click();
 			driver.findElement(AgeSelection).click();
-			driver.findElement(By.id("android:id/button1")).click();
+			clickOnOKButton();
 			driver.findElement(Gender).click();
 			driver.findElement(Male).click();
-			driver.findElement(GenderOk).click();
+			clickOnOKButton();
+			driver.findElement(Password).clear();
 			driver.findElement(Password).sendKeys("12345678");
+			driver.navigate().back();
+			driver.findElement(ConfirmPassword).clear();
 			driver.findElement(ConfirmPassword).sendKeys("12345678");
+			driver.navigate().back();
 			driver.findElement(SignUpButton).click();
 			 System.out.println(getValidationMessage());
 			//String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 			Assert.assertEquals("Please enter Nickname",getValidationMessage());
-			clickOnOKButton();
+			try {
+				clickOnOKButton();
+			}
+			catch (Exception e){
+				System.out.println("Ok Button not present");
+			}
+			
 	 }
 	 
 	@Test(priority=3)
 	 public void verifyExistingNickNamevalidation () throws InterruptedException{
 		 Thread.sleep(500);
 		 driver.findElement(NickName).sendKeys("Arun");
+		 driver.navigate().back();
 		 /*driver.findElement(Email).sendKeys("ghghg@gmail.com");
 			driver.findElement(Age).click();
 			driver.findElement(AgeSelection).click();
@@ -162,58 +183,95 @@ public class Register extends DriverClass{
 		// String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 			 System.out.println(getValidationMessage());
 		 Assert.assertEquals("nickname already exist. Please try with different Nickname.",getValidationMessage());
-		 clickOnOKButton();
+		 try {
+				clickOnOKButton();
+			}
+			catch (Exception e){
+				System.out.println("Ok Button not present");
+			}
+		
 	 }
 	 
 	@Test(priority=4)
 	 public void verifyExistingEmailIDValidation (){
-		
+		driver.findElement(NickName).clear();
 		 driver.findElement(NickName).sendKeys("Arun");
+		 driver.navigate().back();
 		 //ScrollTabs();
+		 //driver.findElement(Email).clear();
+		 driver.navigate().back();
 		 driver.findElement(Email).clear();
-		 driver.findElement(Email).sendKeys("raman@mailinator.com");
+		 driver.findElement(Email).sendKeys(email);
+		 driver.navigate().back();
 		 //driver.findElement(Email).sendKeys("ghghg@gmail.com");
 			driver.findElement(Age).click();
 			driver.findElement(AgeSelection).click();
-			driver.findElement(By.id("android:id/button1")).click();
+			clickOnOKButton();
 			driver.findElement(Gender).click();
 			driver.findElement(Male).click();
-			driver.findElement(GenderOk).click();
+			clickOnOKButton();
+			driver.findElement(Password).clear();
 			driver.findElement(Password).sendKeys("12345678");
+			driver.navigate().back();
 			driver.findElement(ConfirmPassword).sendKeys("12345678");
+			driver.navigate().back();
 			driver.findElement(SignUpButton).click();
 			 System.out.println(getValidationMessage());
 		 //String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		 Assert.assertEquals("This email address already exists.",getValidationMessage());
-		 clickOnOKButton();
+		 try {
+				clickOnOKButton();
+			}
+			catch (Exception e){
+				System.out.println("Ok Button not present");
+			}
+		 
 	 }
 	@Test(priority=5)
 	 public void verifyEmptyEmailIdFiels (){
-		 driver.findElement(NickName).sendKeys("Arun");
+		 //driver.findElement(NickName).sendKeys("Arun");
 		 driver.findElement(Email).clear();
+		 driver.navigate().back();
 		 //driver.findElement(Email).sendKeys("raman@mailinator.com");
 		 driver.findElement(SignUpButton).click();
 		// String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		 System.out.println(getValidationMessage());
 		 Assert.assertEquals("Please enter email address.",getValidationMessage());
-		 clickOnOKButton();
+		 try {
+				clickOnOKButton();
+			}
+			catch (Exception e){
+				System.out.println("Ok Button not present");
+			}
+	
 	 }
 	@Test(priority=6)
 	 public void invalidEmailIdvalidationError (){
+		 driver.findElement(NickName).clear();
 		 driver.findElement(NickName).sendKeys("Arun");
+		 driver.navigate().back();
 		 driver.findElement(Email).sendKeys("raman");
+		 driver.navigate().back();
 		 driver.findElement(SignUpButton).click();
 		 System.out.println(getValidationMessage());
 		 //String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		 Assert.assertEquals("Email address should be in xyz@domain.com format.",getValidationMessage());
-		 clickOnOKButton();
+		 try {
+				clickOnOKButton();
+			}
+			catch (Exception e){
+				System.out.println("Ok Button not present");
+			}
 	 }
 	 
 	@Test(priority=7)
 	 public void genderValidation () {
 		 driver.findElement(SigUp).click();
+		 driver.findElement(NickName).clear();
 			driver.findElement(NickName).sendKeys("sdgsdgdh");
+			driver.navigate().back();
 			driver.findElement(Email).sendKeys("ghghgh@gmail.com");
+			driver.navigate().back();
 	 driver.findElement(SignUpButton).click();
 	 System.out.println(getValidationMessage());
 	 //String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
@@ -221,10 +279,10 @@ public class Register extends DriverClass{
 	 clickOnOKButton();
 }
 	@Test(priority=8)
-	 public void agevalidationError () {
+	 public void agevalidationError (){
 		 driver.findElement(Gender).click();
 		 driver.findElement(Male).click();
-		 driver.findElement(GenderOk).click();
+		 clickOnOKButton();
 		 driver.findElement(SignUpButton).click();
 		 System.out.println(getValidationMessage());
 		 // succeesmessage = driver.findElement(By.id("android:id/message")).getText();
@@ -236,7 +294,7 @@ public class Register extends DriverClass{
 	 public void passwordError (){
 		 driver.findElement(Age).click();
 		 driver.findElement(AgeSelection).click();
-		 driver.findElement(By.id("android:id/button1")).click();
+		 clickOnOKButton();
 		 driver.findElement(SignUpButton).click();
 		 System.out.println(getValidationMessage());
 		 //String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
@@ -244,29 +302,36 @@ public class Register extends DriverClass{
 		 clickOnOKButton();
 	 }
 	
-
+	@Test(priority=10)
 	public void confirmpasswordValidation (){
 		driver.findElement(Password).clear();
 		driver.findElement(Password).sendKeys("12345678");
+		driver.navigate().back();
 		driver.findElement(SignUpButton).click();
+		driver.navigate().back();
 		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		Assert.assertEquals("Please re confirm password.", succeesmessage);
 		 driver.findElement(OK).click();
 	}
 	
+	@Test(priority=11)
 	public void matchingpasswordvalidatioError (){
 		driver.findElement(ConfirmPassword).sendKeys("12235565");
+		driver.navigate().back();
 		driver.findElement(SignUpButton).click();
 		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		Assert.assertEquals("These passwords don't match. Try again?", succeesmessage);
 		 driver.findElement(OK).click();
 	}
 	
+	@Test(priority=12)
 	public void lesThanFourCharactresPasssword(){
 		driver.findElement(Password).clear();
 		driver.findElement(Password).sendKeys("dfhd");
+		driver.navigate().back();
 		driver.findElement(ConfirmPassword).clear();
 		driver.findElement(ConfirmPassword).sendKeys("sdg");
+		driver.navigate().back();
 		driver.findElement(SignUpButton).click();
 		String succeesmessage = driver.findElement(By.id("android:id/message")).getText();
 		Assert.assertEquals("Password should be of minimum 8 and maximum 32 characters.", succeesmessage);

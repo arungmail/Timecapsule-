@@ -52,8 +52,8 @@ public class DriverClass {
 	        //cap.setCapability("appActivity","com.nichi.swimindia.SplashScreenActivity");
 	        /*driver =new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);*/
         	DesiredCapabilities cap = new DesiredCapabilities();
-        	File app= new File("C:\\Users\\nichiuser\\Downloads\\AR Capsule_com.nichi.artimecapsule.apk");
-    		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "0123456789ABCDEF");
+        	File app= new File("C:\\Users\\nichiuser\\Downloads\\ARCapsule_NDR.apk");
+    		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "ZY2242RQS4");
     		cap.setCapability(MobileCapabilityType.APP_PACKAGE, "com.nichi.artimecapsule");
     		cap.setCapability("appActivity","com.nichi.artimecapsule.SplashscreenActivity");
     		driver = new AndroidDriver(new URL(

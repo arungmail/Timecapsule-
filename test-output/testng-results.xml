@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="27" failed="0" total="27" passed="0">
+<testng-results skipped="12" failed="0" total="12" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="167" started-at="2017-08-17T13:06:37Z" finished-at="2017-08-17T13:06:37Z">
+  <suite name="Suite1" duration-ms="129" started-at="2017-10-06T13:59:44Z" finished-at="2017-10-06T13:59:44Z">
     <groups>
     </groups>
-    <test name="Nopackage" duration-ms="167" started-at="2017-08-17T13:06:37Z" finished-at="2017-08-17T13:06:37Z">
+    <test name="Nopackage" duration-ms="129" started-at="2017-10-06T13:59:44Z" finished-at="2017-10-06T13:59:44Z">
+      <class name="Test.Register">
+        <test-method status="SKIP" signature="checkvalidRegistration()[pri:1, instance:Test.Register@204f30ec]" name="checkvalidRegistration" duration-ms="3" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkvalidRegistration -->
+        <test-method status="SKIP" signature="nickNamevalidation()[pri:2, instance:Test.Register@204f30ec]" name="nickNamevalidation" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nickNamevalidation -->
+        <test-method status="SKIP" signature="verifyExistingNickNamevalidation()[pri:3, instance:Test.Register@204f30ec]" name="verifyExistingNickNamevalidation" duration-ms="2" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyExistingNickNamevalidation -->
+        <test-method status="SKIP" signature="verifyExistingEmailIDValidation()[pri:4, instance:Test.Register@204f30ec]" name="verifyExistingEmailIDValidation" duration-ms="2" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyExistingEmailIDValidation -->
+        <test-method status="SKIP" signature="verifyEmptyEmailIdFiels()[pri:5, instance:Test.Register@204f30ec]" name="verifyEmptyEmailIdFiels" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmptyEmailIdFiels -->
+        <test-method status="SKIP" signature="invalidEmailIdvalidationError()[pri:6, instance:Test.Register@204f30ec]" name="invalidEmailIdvalidationError" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidEmailIdvalidationError -->
+        <test-method status="SKIP" signature="genderValidation()[pri:7, instance:Test.Register@204f30ec]" name="genderValidation" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- genderValidation -->
+        <test-method status="SKIP" signature="agevalidationError()[pri:8, instance:Test.Register@204f30ec]" name="agevalidationError" duration-ms="3" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- agevalidationError -->
+        <test-method status="SKIP" signature="passwordError()[pri:9, instance:Test.Register@204f30ec]" name="passwordError" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordError -->
+        <test-method status="SKIP" signature="confirmpasswordValidation()[pri:10, instance:Test.Register@204f30ec]" name="confirmpasswordValidation" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmpasswordValidation -->
+        <test-method status="SKIP" signature="matchingpasswordvalidatioError()[pri:11, instance:Test.Register@204f30ec]" name="matchingpasswordvalidatioError" duration-ms="2" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- matchingpasswordvalidatioError -->
+        <test-method status="SKIP" signature="lesThanFourCharactresPasssword()[pri:12, instance:Test.Register@204f30ec]" name="lesThanFourCharactresPasssword" duration-ms="1" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lesThanFourCharactresPasssword -->
+      </class> <!-- Test.Register -->
       <class name="BasePackage.DriverClass">
-        <test-method status="FAIL" signature="launnApplication()[pri:0, instance:BasePackage.DriverClass@4883b407]" name="launnApplication" is-config="true" duration-ms="0" started-at="2017-08-17T18:36:35Z" finished-at="2017-08-17T18:36:35Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+        <test-method status="FAIL" signature="launnApplication()[pri:0, instance:BasePackage.DriverClass@77cd7a0]" name="launnApplication" is-config="true" duration-ms="0" started-at="2017-10-06T19:29:31Z" finished-at="2017-10-06T19:29:31Z">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+              <![CDATA[A new session could not be created. (Original error: Could not extract PIDs from ps output. PIDS: [], Procs: ["bad pid 'uiautomator'"]) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 12.08 seconds
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'NIS-PC093', ip: '192.168.1.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
-Driver info: driver.version: AndroidDriver]]>
+Driver info: io.appium.java_client.android.AndroidDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: A new session could not be created. (Original error: Could not extract PIDs from ps output. PIDS: [], Procs: ["bad pid 'uiautomator'"]) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 12.08 seconds
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'NIS-PC093', ip: '192.168.1.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
-Driver info: driver.version: AndroidDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
+Driver info: io.appium.java_client.android.AndroidDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
@@ -50,162 +108,17 @@ Driver info: driver.version: AndroidDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:4723 [/127.0.0.1] failed: Connection refused: connect
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'NIS-PC093', ip: '192.168.1.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_92'
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 29 more
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:4723 [/127.0.0.1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:140)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:314)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:67)
-	... 30 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:72)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:117)
-	... 43 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launnApplication -->
-        <test-method status="SKIP" signature="closeApplication()[pri:0, instance:BasePackage.DriverClass@4883b407]" name="closeApplication" is-config="true" duration-ms="0" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
+        <test-method status="SKIP" signature="closeApplication()[pri:0, instance:BasePackage.DriverClass@77cd7a0]" name="closeApplication" is-config="true" duration-ms="0" started-at="2017-10-06T19:29:44Z" finished-at="2017-10-06T19:29:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
       </class> <!-- BasePackage.DriverClass -->
-      <class name="Test.HomePage">
-        <test-method status="SKIP" signature="createTCCapsule()[pri:1, instance:Test.HomePage@7d9d1a19]" name="createTCCapsule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createTCCapsule -->
-        <test-method status="SKIP" signature="checkExcavatioLocationIncreatedCapsule()[pri:2, instance:Test.HomePage@7d9d1a19]" name="checkExcavatioLocationIncreatedCapsule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkExcavatioLocationIncreatedCapsule -->
-        <test-method status="SKIP" signature="verifyExcavationDate()[pri:3, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDate" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDate -->
-        <test-method status="SKIP" signature="editExcavationLocationandDateandPlace()[pri:4, instance:Test.HomePage@7d9d1a19]" name="editExcavationLocationandDateandPlace" duration-ms="3" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editExcavationLocationandDateandPlace -->
-        <test-method status="SKIP" signature="checkExcavatioLocationIncreatedCapsuleafterEdit()[pri:5, instance:Test.HomePage@7d9d1a19]" name="checkExcavatioLocationIncreatedCapsuleafterEdit" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkExcavatioLocationIncreatedCapsuleafterEdit -->
-        <test-method status="SKIP" signature="verifyExcavationDateafterEdit()[pri:6, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDateafterEdit" duration-ms="3" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDateafterEdit -->
-        <test-method status="SKIP" signature="editToPCCapsule()[pri:7, instance:Test.HomePage@7d9d1a19]" name="editToPCCapsule" duration-ms="3" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editToPCCapsule -->
-        <test-method status="SKIP" signature="verifyExcavationDateInPC()[pri:8, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDateInPC" duration-ms="4" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDateInPC -->
-        <test-method status="SKIP" signature="verifyDeleteCApsuleValidatioMessage()[pri:9, instance:Test.HomePage@7d9d1a19]" name="verifyDeleteCApsuleValidatioMessage" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeleteCApsuleValidatioMessage -->
-        <test-method status="SKIP" signature="verifyCapsuleExistByClickOnNo()[pri:10, instance:Test.HomePage@7d9d1a19]" name="verifyCapsuleExistByClickOnNo" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCapsuleExistByClickOnNo -->
-        <test-method status="SKIP" signature="verfyCaosuleNotExistByClickOnYes()[pri:11, instance:Test.HomePage@7d9d1a19]" name="verfyCaosuleNotExistByClickOnYes" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verfyCaosuleNotExistByClickOnYes -->
-        <test-method status="SKIP" signature="createPCCapaule()[pri:12, instance:Test.HomePage@7d9d1a19]" name="createPCCapaule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPCCapaule -->
-        <test-method status="SKIP" signature="checkExcavatioLocationIncreatedPCCapsule()[pri:13, instance:Test.HomePage@7d9d1a19]" name="checkExcavatioLocationIncreatedPCCapsule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkExcavatioLocationIncreatedPCCapsule -->
-        <test-method status="SKIP" signature="verifyExcavationDateInPCCApaule()[pri:14, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDateInPCCApaule" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDateInPCCApaule -->
-        <test-method status="SKIP" signature="editExcavationLocationandDateandPlacePCCapsule()[pri:15, instance:Test.HomePage@7d9d1a19]" name="editExcavationLocationandDateandPlacePCCapsule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editExcavationLocationandDateandPlacePCCapsule -->
-        <test-method status="SKIP" signature="checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule()[pri:16, instance:Test.HomePage@7d9d1a19]" name="checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule -->
-        <test-method status="SKIP" signature="verifyExcavationDateafterEditPCCApaule()[pri:17, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDateafterEditPCCApaule" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDateafterEditPCCApaule -->
-        <test-method status="SKIP" signature="editPCCApauleToTC()[pri:18, instance:Test.HomePage@7d9d1a19]" name="editPCCApauleToTC" duration-ms="4" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editPCCApauleToTC -->
-        <test-method status="SKIP" signature="verifyExcavationDateInTC()[pri:19, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationDateInTC" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationDateInTC -->
-        <test-method status="SKIP" signature="verifyDeleteCApsuleValidatioMessageTC()[pri:20, instance:Test.HomePage@7d9d1a19]" name="verifyDeleteCApsuleValidatioMessageTC" duration-ms="4" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeleteCApsuleValidatioMessageTC -->
-        <test-method status="SKIP" signature="verifyCapsuleExistByClickOnNo1()[pri:21, instance:Test.HomePage@7d9d1a19]" name="verifyCapsuleExistByClickOnNo1" duration-ms="3" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCapsuleExistByClickOnNo1 -->
-        <test-method status="SKIP" signature="verfyCaosuleNotExistByClickOnYes1()[pri:22, instance:Test.HomePage@7d9d1a19]" name="verfyCaosuleNotExistByClickOnYes1" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verfyCaosuleNotExistByClickOnYes1 -->
-        <test-method status="SKIP" signature="verifyCapsuleTypevalidationError()[pri:23, instance:Test.HomePage@7d9d1a19]" name="verifyCapsuleTypevalidationError" duration-ms="2" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCapsuleTypevalidationError -->
-        <test-method status="SKIP" signature="verifySelectIconValidationErrorMessage()[pri:24, instance:Test.HomePage@7d9d1a19]" name="verifySelectIconValidationErrorMessage" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySelectIconValidationErrorMessage -->
-        <test-method status="SKIP" signature="verifyFillLocationValidationError()[pri:25, instance:Test.HomePage@7d9d1a19]" name="verifyFillLocationValidationError" duration-ms="1" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFillLocationValidationError -->
-        <test-method status="SKIP" signature="verifyExcavationLocationvalidationError()[pri:26, instance:Test.HomePage@7d9d1a19]" name="verifyExcavationLocationvalidationError" duration-ms="3" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExcavationLocationvalidationError -->
-        <test-method status="SKIP" signature="verifyUploadImagevalidationError()[pri:27, instance:Test.HomePage@7d9d1a19]" name="verifyUploadImagevalidationError" duration-ms="8" started-at="2017-08-17T18:36:37Z" finished-at="2017-08-17T18:36:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUploadImagevalidationError -->
-      </class> <!-- Test.HomePage -->
     </test> <!-- Nopackage -->
   </suite> <!-- Suite1 -->
 </testng-results>
