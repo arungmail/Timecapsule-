@@ -5,6 +5,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MultiTouchAction;
@@ -157,5 +159,9 @@ public class Utility extends DriverClass{
 			  driver.findElement(By.name("Tabs")).click();
 		}
 		
+		public void explicitWait (WebElement elementToBeLoaded){
+			 WebDriverWait wait = new WebDriverWait(driver, 15);
+			    WebElement element = wait.until(ExpectedConditions.visibilityOf(elementToBeLoaded));		
+		}
 		
 }

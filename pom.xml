@@ -21,12 +21,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
@@ -34,11 +28,7 @@
     <version>6.9.10</version>
 </dependency>
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>2.53.1</version>
-</dependency>
+
 <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 <dependency>
     <groupId>io.appium</groupId>
@@ -63,10 +53,25 @@
     <artifactId>xalan</artifactId>
     <version>2.7.1</version>
 </dependency>
-    <dependency>
-        <groupId>org.bytedeco.javacpp-presets</groupId>
-        <artifactId>tesseract</artifactId>
-        <version>3.04-1.1</version>
-    </dependency>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.53.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit -->
+<dependency>
+    <groupId>com.squareup.retrofit2</groupId>
+    <artifactId>retrofit</artifactId>
+    <version>2.1.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client -->
+<dependency>
+    <groupId>com.google.http-client</groupId>
+    <artifactId>google-http-client</artifactId>
+    <version>1.22.0</version>
+</dependency>
+
   </dependencies>
 </project>

@@ -9,20 +9,27 @@
   </test> <!-- Nopackage -->
   <test name="Nopackage(failed)">
     <classes>
-      <class name="BasePackage.DriverClass">
-        <methods>
-          <include name="launnApplication"/>
-          <include name="closeApplication"/>
-        </methods>
-      </class> <!-- BasePackage.DriverClass -->
       <class name="Test.Register">
         <methods>
           <include name="checkvalidRegistration"/>
+          <include name="confirmpasswordValidation"/>
+          <include name="verifyEmptyEmailIdFiels"/>
+          <include name="passwordError"/>
+          <include name="invalidEmailIdvalidationError"/>
           <include name="verifyExistingEmailIDValidation"/>
+          <include name="matchingpasswordvalidatioError"/>
+          <include name="agevalidationError"/>
           <include name="nickNamevalidation"/>
+          <include name="lesThanFourCharactresPasssword"/>
           <include name="verifyExistingNickNamevalidation"/>
+          <include name="genderValidation"/>
         </methods>
       </class> <!-- Test.Register -->
+      <class name="BasePackage.DriverClass">
+        <methods>
+          <include name="launnApplication"/>
+        </methods>
+      </class> <!-- BasePackage.DriverClass -->
     </classes>
   </test> <!-- Nopackage(failed) -->
 </suite> <!-- Failed suite [Suite1] -->
