@@ -1,6 +1,9 @@
 package Test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import BasePackage.DriverClass;
@@ -33,6 +36,11 @@ public class Register extends DriverClass{
 	public String getValidationMessage(){
 		String validationMessage = driver.findElement(Sucessmessage).getText();
 		return validationMessage;
+	}
+	
+	public void exlicitWait(WebElement element){
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 	/* @AndroidFindBy(id = "com.nichi.artimecapsule:id/signup")

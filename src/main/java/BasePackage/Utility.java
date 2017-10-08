@@ -1,5 +1,7 @@
 package BasePackage;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,22 @@ public class Utility extends DriverClass{
 
 	
 	public Dimension size;
+	
+	
+	public void getPushNotification(){
+		driver.openNotifications();
+
+	    List<WebElement> allnotifications=driver.findElements(By.id("android:id/title"));
+
+	    for (WebElement webElement : allnotifications) {
+	        System.out.println(webElement.getText());
+	        if(webElement.getText().contains("something")){
+	            System.out.println("Notification found");
+	            break;
+	        }
+	    }
+
+	}
 
 	public void multTouchAction ()  throws InterruptedException {
 	
