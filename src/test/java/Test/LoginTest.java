@@ -26,10 +26,12 @@ public class LoginTest extends DriverClass{
 	
 	@Test(priority=1)
 	
-	public void verifyEmptyTextValidationMessage (){
+	public void verifyEmptyTextValidationMessage () throws InterruptedException{
 		driver.findElement(EmailID).clear();
 		driver.navigate().back();
-		Assert.assertEquals(getAlertText(),"Please enter email aaddress.");
+		driver.findElement(LoginButton).click();
+		Thread.sleep(500);
+		Assert.assertEquals(getAlertText(),"Please enter email a[[a]]ddress.");
 		clickOnOKButtonOnAlertBox();
 	}
 	
@@ -38,28 +40,29 @@ public class LoginTest extends DriverClass{
 	public void verifyInvalidEmailValidationError (){
 		driver.findElement(EmailID).clear();
 		driver.findElement(EmailID).sendKeys("sdsds");
+		driver.findElement(LoginButton).click();
 		Assert.assertEquals(getAlertText(),"Email address should be in xyz@domain.com format.");
 		clickOnOKButtonOnAlertBox();
 	}
 	
-	@Test (priority=2)
+	@Test (priority=3)
 	
-	public void verifyEmptyPasswordValidationError (){
+	public void verifyEmptyPasswordValidationError () throws InterruptedException{
 		driver.findElement(EmailID).clear();
 		driver.findElement(EmailID).sendKeys("sdsds@gmail.com");
+		driver.findElement(LoginButton).click();
+		Thread.sleep(500);
 		Assert.assertEquals(getAlertText(),"Please enter password.");
 		clickOnOKButtonOnAlertBox();
 	}
 	
+	@Test (priority=4)
 	public void verifyInvalidpasswordError (){
 		driver.findElement(Pssword).clear();
 		driver.findElement(Pssword).sendKeys("12345678910");
-		Assert.assertEquals(getAlertText(),"Please enter password.");
+		driver.findElement(LoginButton).click();
+		Assert.assertEquals(getAlertText(),"Please enter [[]]password.");
 		clickOnOKButtonOnAlertBox();
 	}
 	
-	
-	
-	
-
 }

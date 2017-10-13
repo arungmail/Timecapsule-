@@ -4,27 +4,42 @@
   <test name="Nopackage">
     <classes>
       <class name="BasePackage.DriverClass"/>
-      <class name="Test.Register"/>
+      <class name="Test.HomePage"/>
     </classes>
   </test> <!-- Nopackage -->
   <test name="Nopackage(failed)">
     <classes>
-      <class name="Test.Register">
+      <class name="Test.HomePage">
         <methods>
-          <include name="checkvalidRegistration"/>
-          <include name="confirmpasswordValidation"/>
-          <include name="verifyEmptyEmailIdFiels"/>
-          <include name="passwordError"/>
-          <include name="invalidEmailIdvalidationError"/>
-          <include name="verifyExistingEmailIDValidation"/>
-          <include name="matchingpasswordvalidatioError"/>
-          <include name="agevalidationError"/>
-          <include name="nickNamevalidation"/>
-          <include name="lesThanFourCharactresPasssword"/>
-          <include name="verifyExistingNickNamevalidation"/>
-          <include name="genderValidation"/>
+          <include name="verifyExcavationDateafterEdit"/>
+          <include name="checkExcavatioLocationIncreatedPCCapsule"/>
+          <include name="verifyExcavationLocationvalidationError"/>
+          <include name="editExcavationLocationandDateandPlacePCCapsule"/>
+          <include name="verfyCaosuleNotExistByClickOnYes"/>
+          <include name="createPCCapaule"/>
+          <include name="verifyUploadImagevalidationError"/>
+          <include name="checkExcavatioLocationIncreatedCapsule"/>
+          <include name="checkExcavatioLocationIncreatedCapsuleafterEditPCCApaule"/>
+          <include name="verfyCaosuleNotExistByClickOnYes1"/>
+          <include name="verifySelectIconValidationErrorMessage"/>
+          <include name="verifyFillLocationValidationError"/>
+          <include name="verifyDeleteCApsuleValidatioMessageTC"/>
+          <include name="editPCCApauleToTC"/>
+          <include name="checkExcavatioLocationIncreatedCapsuleafterEdit"/>
+          <include name="createTCCapsule"/>
+          <include name="editToPCCapsule"/>
+          <include name="verifyCapsuleExistByClickOnNo1"/>
+          <include name="verifyExcavationDateInTC"/>
+          <include name="verifyExcavationDate"/>
+          <include name="verifyCapsuleExistByClickOnNo"/>
+          <include name="verifyExcavationDateInPCCApaule"/>
+          <include name="verifyDeleteCApsuleValidatioMessage"/>
+          <include name="verifyExcavationDateInPC"/>
+          <include name="editExcavationLocationandDateandPlace"/>
+          <include name="verifyCapsuleTypevalidationError"/>
+          <include name="verifyExcavationDateafterEditPCCApaule"/>
         </methods>
-      </class> <!-- Test.Register -->
+      </class> <!-- Test.HomePage -->
       <class name="BasePackage.DriverClass">
         <methods>
           <include name="launnApplication"/>
