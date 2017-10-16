@@ -52,7 +52,7 @@ public class HomePage extends DriverClass {
 	public By ConfirmButton   = By.id("com.nichi.artimecapsule:id/selectpeople_btn");
 	public By GrooupAuthSend  = By.id("com.nichi.artimecapsule:id/icon_scan");
 	public By GroupAuthQRCode     = By.id("com.nichi.artimecapsule:id/icon_display");  
-	public By GroupNAmeEnter           = By.xpath("//android.widget.EditText[@index='0']");
+	public By GroupNAmeTextField           = By.xpath("//android.widget.EditText[@index='0']");
 	public By OKButton 					= By.name("OK");
 	public By AuthenticationComplete   = By.id("com.nichi.artimecapsule:id/stop_scan");
 	public By ValidationMessage   = By.id("android:id/message");
@@ -66,7 +66,42 @@ public class HomePage extends DriverClass {
 	String pcExcavationDate = "(PC) Excavation Date: 23-Oct-2017";
 	String excavationLocationSpainVillage = "Excavation Location: Spain Village";
 	String excavationLocationHarukas   = "Excavation Location: Harukas";
+	String memberinViewMember = "";
 	
+	
+	public String  verifyMemberInMembersList (String name ){
+		WebElement cardView = driver.findElement(By.id("com.nichi.artimecapsule:id/memberlist_recyclerview"));
+		List <WebElement> eachCard = driver.findElements(By.id("com.nichi.artimecapsule:id/cardView"));
+		eachCard.size();
+		for (int i=0;i<eachCard.size();i++){
+			List <WebElement> userName = eachCard.get(i).findElements(By.id("com.nichi.artimecapsule:id/device_details"));
+			for (int j=0;j<userName.size();j++){
+					String userNames = userName.get(j).getText();
+					if (userNames.equals(name)){
+						return name; 
+					}
+					break;
+			}
+			
+		}
+		return name;
+	}
+	
+	public void clickOnDeleteOptionFromViewmembersList (String name){
+		WebElement cardView = driver.findElement(By.id("com.nichi.artimecapsule:id/memberlist_recyclerview"));
+		List <WebElement> eachCard = driver.findElements(By.id("com.nichi.artimecapsule:id/cardView"));
+		eachCard.size();
+		for (int i=0;i<eachCard.size();i++){
+			List <WebElement> userName = eachCard.get(i).findElements(By.id("com.nichi.artimecapsule:id/device_details"));
+			for (int j=0;j<userName.size();j++){
+					String userNames = userName.get(j).getText();
+					if (userNames.equals(name)){
+						driver.findElement(By.id("com.nichi.artimecapsule:id/delete_btn")).click();
+						break;
+					}
+			}
+		}
+	}
 	public void clickOnDate (){
 		driver.findElement(By.name("23")).click();
 	}
@@ -409,7 +444,76 @@ public class HomePage extends DriverClass {
 		clickOnNextButton();
 		Assert.assertEquals(getAlertMessageText(),"Please select the Greeting card." );	
 	}
-
 	
-
+	@Test(priority=27)
+	
+	public void groupAuthentication () throws InterruptedException{
+		driver.findElement(CreateAdd).click();
+		driver.findElement(PCButton).click();
+		clickOnNextButton();
+		driver.findElement(Occasion).click();
+		clickOnNextButton();
+		/*driver.findElement(SpainVillageNDR).click();
+		clickOnNextButton();*/
+		selectFillOrExcavationLocations(0);
+		clickOnNextButton();
+		clickOnDate ();
+		clickOnNextButton();
+		driver.findElement(CameraButton).click();
+		driver.findElement(TakePhoto).click();
+		Thread.sleep(2000);
+		driver.findElement(ShutterButtonOnCamera).click();
+		driver.findElement(CameraDoneButton).click();
+		driver.findElement(AddMessage).clear();
+		driver.findElement(AddMessage).sendKeys("FirstAppiumTest");
+		driver.navigate().back();
+		driver.findElement(CompleteButtton).click();
+		driver.findElement(CapauleImage).click();
+		driver.findElement(FillButton).click();
+		driver.findElement(OKButton).click();
+		driver.findElement(FilledTab).click();
+		boolean pcCapsule = driver.findElement(CapauleImage) != null;
+		Assert.assertEquals(true, pcCapsule);
+		
+		
+	}
+	
+	public void sharePCCapsule (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(By.name("Excavate")).click();
+		driver.findElement(LeaderSelect).click();
+		driver.findElement(GroupNAmeTextField).clear();
+		driver.findElement(GroupNAmeTextField).sendKeys("Automation1");
+		driver.findElement(OKButton).click();
+		WebElement alert = driver.findElement(By.id("com.nichi.artimecapsule:id/alert_body"));
+		reg.exlicitWait(alert);
+		String alrermessage = getAlertMessageText();
+		Assert.assertEquals("Scanned successfully", alrermessage);
+		clickOnOKOnAlertmessage();
+		//driver.findElement(AuthenticationCompleteButton);
+		driver.findElement(ConfirmButton).click();
+	}
+	
+	public void verifyGroupAuthenticationSucessMessage (){
+		Assert.assertEquals("Group authentication completed successfully", getAlertMessageText());
+		clickOnOKOnAlertmessage();
+		
+	}
+	
+	public void checkMembersInViewMembers (){
+		driver.findElement(CapauleImage).click();
+		driver.findElement(By.name("View Members")).click();
+		verifyMemberInMembersList(memberinViewMember);
+		Assert.assertEquals("", verifyMemberInMembersList(memberinViewMember));	
+	}
+	
+	public void deletememberFromViewmemberList (){
+		clickOnDeleteOptionFromViewmembersList(memberinViewMember);
+		driver.navigate().back();
+		driver.findElement(CapauleImage).click();
+		driver.findElement(By.name("View Members")).click();
+		verifyMemberInMembersList(memberinViewMember);
+		boolean verifyDeletedMember = verifyMemberInMembersList(memberinViewMember)==null;
+		Assert.assertEquals(true, verifyDeletedMember);
+	}
 }
